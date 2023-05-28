@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Google Fonts -->
+    <link href="httpsbtnAdminAddCar://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="asserts/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="asserts/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="asserts/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="asserts/vendor/aos/aos.css" rel="stylesheet">
+    <link href="asserts/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="asserts/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+    <link href="asserts/css/main.css" rel="stylesheet">
+    <link href="asserts/css/main/normalize.css" rel="stylesheet">
+    <link href="asserts/css/main/carCard.css" rel="stylesheet">
+    <link href="asserts/css/main/cartCss.css" rel="stylesheet">
+    <link href="asserts/css/main/adminDashboard.css" rel="stylesheet">
+    <link href="asserts/css/main/viewVehicle.css" rel="stylesheet">
+</head>
+<body>
+
+<main id="adminHeaderMain">
+    <!-- ======= Header ======= -->
+    <header class="header d-flex align-items-center">
+
+        <!--========================-->
+        <div class="d-flex align-items-center justify-content-between">
+            <a class="logo d-flex align-items-center" href="asserts/pages/index.html">
+                <img alt="" src="asserts/image/logo.jpg">
+                <span class="d-none d-lg-block">ECar Rental</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item dropdown pe-3">
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-house"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-minecart"></i>
+                                <span>Car Rental</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+    </header><!-- End Header -->
+
+
+    <!-- ======= Sidebar ======= -->
+    <aside class="sidebar" id="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+            <li class="nav-item" id="adDash">
+                <a class="nav-link ">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+
+            <li class="nav-heading">Pages</li>
+
+            <li class="nav-item" id="adRes">
+                <a class="nav-link collapsed">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Reservation</span>
+                </a>
+            </li><!-- End Reser Page Nav -->
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#car-nav" data-bs-toggle="collapse">
+                    <i class="fa-solid fa-car-rear"></i><span>Car</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="car-nav">
+                    <li id="adViewCar">
+                        <a>
+                            <i class="bi bi-circle"></i><span>Add Car</span>
+                        </a>
+                    </li>
+                    <li id="adViewCarView">
+                        <a>
+                            <i class="bi bi-circle"></i><span>View Car</span>
+                        </a>
+                    </li>
+                    <li id="adCarSchedule">
+                        <a>
+                            <i class="bi bi-circle"></i><span>Car Schedule</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Driver Nav -->
+
+
+            <!-------------------------------->
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#customer-nav" data-bs-toggle="collapse">
+                    <i class="fa-regular fa-user"></i><span>Customer</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="customer-nav">
+                    <li id="adCustomer">
+                        <a>
+                            <i class="bi bi-circle"></i><span>Verifications</span>
+                        </a>
+                    </li>
+                    <li id="adViewAllCustomer">
+                        <a>
+                            <i class="bi bi-circle"></i><span>View All</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Driver Nav -->
+            <!-------------------------------->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse">
+                    <i class="fa-solid fa-user-group"></i><span>Driver</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="tables-nav">
+                    <li id="adViewDriver">
+                        <a>
+                            <i class="bi bi-circle"></i><span>View Driver</span>
+                        </a>
+                    </li>
+                    <li id="adDriverSchedule">
+                        <a>
+                            <i class="bi bi-circle"></i><span>Driver Schedule</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Driver Nav -->
+
+            <li class="nav-item" id="adPayment">
+                <a class="nav-link collapsed">
+                    <i class="fa-solid fa-money-check-dollar"></i></i>
+                    <span>Payment</span>
+                </a>
+            </li><!-- End Login Page Nav -->
+        </ul>
+    </aside>
+
+    <!--=====================================================================================-->
+    <main id="adminDashboard">
+        <main class="main" id="adminDashboardMain">
+
+            <div class="pagetitle">
+                <h1>Dashboard</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="asserts/pages/index.html">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </nav>
+            </div><!-- End Page Title -->
+
+            <section class="section dashboard">
+                <div class="row">
+
+                    <!-- Left side columns -->
+                    <div class="col-lg-12">
+                        <div class="row">
+
+
+                            <!-- Booking Card -->
+                            <div class="col-xxl-4 col-md-6">
+                                <div class="card info-card sales-card">
+
+                                    <div class="filter">
+                                        <a class="icon" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                            <li class="dropdown-header text-start">
+                                                <h6>Filter</h6>
+                                            </li>
+
+                                            <li><a class="dropdown-item">Today</a></li>
+                                            <li><a class="dropdown-item">This Month</a></li>
+                                            <li><a class="dropdown-item">This Year</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">Booking <span>| Today</span></h5>
+
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="fa-solid fa-book-bookmark"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>145</h6>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div><!-- End Sales Card -->
+
+                            <!-- Income Card -->
+                            <div class="col-xxl-4 col-md-6">
+                                <div class="card info-card revenue-card">
+
+                                    <div class="filter">
+                                        <a class="icon" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                            <li class="dropdown-header text-start">
+                                                <h6>Filter</h6>
+                                            </li>
+
+                                            <li><a class="dropdown-item">Today</a></li>
+                                            <li><a class="dropdown-item">This Month</a></li>
+                                            <li><a class="dropdown-item">This Year</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">Income <span>| This Month</span></h5>
+
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="fa-solid fa-money-check"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>LKR 3,264</h6>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div><!-- End Income Card -->
+
+                            <!-- Customers Card -->
+                            <div class="col-xxl-4 col-xl-12">
+
+                                <div class="card info-card customers-card">
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Customers</h5>
+
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-people"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>1244</h6>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div><!-- End Customers Card -->
+
+
+                            <!-- Driver Card -->
+                            <div class="col-xxl-4 col-md-6">
+                                <div class="card info-card revenue-card">
+
+                                    <div class="filter">
+                                        <a class="icon" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                            <li class="dropdown-header text-start">
+                                                <h6>Filter</h6>
+                                            </li>
+
+                                            <li><a class="dropdown-item">All Drivers</a></li>
+                                            <li><a class="dropdown-item">Occupied Drivers</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Driver <span>| All Drivers</span></h5>
+
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="fa-solid fa-people-group"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>30</h6>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div><!-- End Driver Card -->
+
+
+                            <!-- Car Card -->
+                            <div class="col-xxl-4 col-md-6">
+                                <div class="card info-card revenue-card">
+
+                                    <div class="filter">
+                                        <a class="icon" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                            <li class="dropdown-header text-start">
+                                                <h6>Filter</h6>
+                                            </li>
+
+                                            <li><a class="dropdown-item">All Cars</a></li>
+                                            <li><a class="dropdown-item">Occupied Cars</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">Total Car <span>| All Cars</span></h5>
+
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="fa-solid fa-car-rear"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>40</h6>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div><!-- End Car Card -->
+
+
+                            <!-- Maintenance Card -->
+                            <div class="col-xxl-4 col-md-6">
+                                <div class="card info-card revenue-card">
+
+
+                                    <div class="card-body">
+                                        <h5 class="card-title">Under Maintenance </h5>
+
+                                        <div class="d-flex align-items-center">
+                                            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="fa-solid fa-car-burst"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>5</h6>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- End Maintenance Card -->
+
+                        </div>
+                    </div><!-- End Left side columns -->
+                </div>
+            </section>
+
+        </main><!-- End #main -->
+    </main>
+
+</main>
+
+<!--Car ADD-->
+<main id="adminAddVehicle">
+    <main class="main" id="adminCarAdd">
+
+        <div class="container">
+            <section
+                    class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                            <div class="card mb-3">
+
+                                <div class="card-body">
+
+                                    <div class="pt-4 pb-2">
+                                        <h5 class="card-title text-center pb-0 fs-4">Add Vehicle</h5>
+                                    </div>
+
+                                    <div class="d-flex align-items-end flex-column bd-highlight pb-4">
+                                        <!--View btn-->
+                                        <div>
+                                            <button class="btn btn-primary w-100" id="carAddVehicleAddButton"
+                                                    type="submit">View Vehicles
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <form class="row g-3" name="form1">
+
+                                        <!--Registration Id-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3 "
+                                                   id="save-car-registration" placeholder="Registration Id"
+                                                   type="text">
+                                        </div>
+
+                                        <!--Brand-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="new_car_brand"
+                                                   name="brand"
+                                                   placeholder="Brand" type="text">
+                                        </div>
+
+                                        <!--Model-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-model"
+                                                   placeholder="Model" type="text">
+                                        </div>
+
+
+                                        <!--Colour-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-color"
+                                                   placeholder="Colour" type="text">
+                                        </div>
+
+                                        <!--Type-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <select aria-label="Default select example" class="form-select mb-3"
+                                                    id="save-car-type">
+                                                <option disabled selected value="">Select Type</option>
+                                                <option value="General">General</option>
+                                                <option value="Premium">Premium</option>
+                                                <option value="Luxury">Luxury</option>
+                                            </select>
+                                        </div>
+
+
+                                        <!--Transmission-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <select aria-label="Default select example" class="form-select mb-3"
+                                                    id="save-car-transmission">
+                                                <option disabled selected value="">Transmission Type</option>
+                                                <option value="Auto">Auto</option>
+                                                <option value="Manual">Manual</option>
+                                            </select>
+                                        </div>
+
+                                        <!--No Of Passenger-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-passengers"
+                                                   placeholder="No Of Passenger" type="number">
+                                        </div>
+
+                                        <!--Status-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <select aria-label="Default select example" class="form-select mb-3"
+                                                    id="save-car-status">
+                                                <option disabled selected>Availability</option>
+                                                <option value="Available">Available</option>
+                                                <option value="Unavailable">Unavailable</option>
+                                            </select>
+                                        </div>
+
+                                        <!--Fuel-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <select aria-label="Default select example" class="form-select mb-3"
+                                                    id="save-car-fuelType">
+                                                <option disabled selected>Fuel Type</option>
+                                                <option value="Petrol">Petrol</option>
+                                                <option value="Diesel">Diesel</option>
+                                            </select>
+                                        </div>
+
+
+                                        <!--Daily Rate-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-daily"
+                                                   placeholder="Daily Rate" type="number">
+                                        </div>
+
+                                        <!--Monthly Rate-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-monthly"
+                                                   placeholder="Monthly Rate" type="number">
+                                        </div>
+
+                                        <!--Last Service Mileage-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-lastService-mileage"
+                                                   placeholder="Last Service Mileage" type="number">
+                                        </div>
+
+                                        <!--freeKmDay-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-freeKm-Day"
+                                                   placeholder="Free Km Day" type="number">
+                                        </div>
+
+                                        <!--freeKmMonth-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-freeKm-Month"
+                                                   placeholder="Free Km Month" type="number">
+                                        </div>
+
+                                        <!--Price For Extra Km-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-extraKm-price"
+                                                   placeholder="Price FOr Extra Km" type="number">
+                                        </div>
+
+
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-waiver-payment"
+                                                   placeholder="Waiver Payment" type="number">
+                                        </div>
+
+                                        <!--Description-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input aria-label="Disabled input example" class="form-control mb-3"
+                                                   id="save-car-Description"
+                                                   placeholder="Vehicle Description" type="text">
+                                        </div>
+
+                                        <div class=" col-md-6 mb-3">
+
+                                        </div>
+
+                                        <div class="form-group col-md-6 mb-3">
+                                            <label class="form-label fw-bold">Front View Of Car</label>
+                                            <input class="form-control frontView" id=frontView"
+                                                   name="frontView" type="file">
+                                        </div>
+
+                                        <div class="form-group col-md-6 mb-3">
+                                            <label class="form-label fw-bold">Back View Of Car</label>
+                                            <input class="form-control backView" id=backView"
+                                                   name="backView" type="file">
+                                        </div>
+                                        <div class="form-group col-md-6 mb-3">
+                                            <label class="form-label fw-bold">Side View Of Car</label>
+                                            <input class="form-control sideView" id=sideView"
+                                                   name="sideView" type="file">
+                                        </div>
+                                        <div class="form-group col-md-6 mb-3">
+                                            <label class="form-label fw-bold">Interior View Of Car</label>
+                                            <input class="form-control interior" id=interior"
+                                                   name="interior" type="file">
+                                        </div>
+
+
+                                        <!--Add btn-->
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100" id="btnAdminAddCar" type="button">Add
+                                                Vehicle
+                                            </button>
+                                        </div>
+
+                                    </form>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+
+    </main>
+</main>
+
+<!--Customer Verification-->
+<main id="adminCustomerVerification">
+    <main class="main" id="mainCustomerVerification">
+
+        <div class="pagetitle">
+            <h1>Customer Verification</h1>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard">
+            <!-- Customer Verification -->
+            <div class="container-fluid col-12">
+                <div class="card top-selling overflow-auto">
+
+                    <div class="card-body pb-0">
+
+                        <table class="table table-borderless">
+                            <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Contact Number</th>
+                                <th scope="col">NIC</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">NIC/License</th>
+                                <th scope="col">Verify</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!-- End Customer Verification -->
+        </section>
+
+    </main><!-- End #main --></main>
+
+
+<!---->
+<!--========================================================================
+                                Rental Verification
+============================================================================-->
+<main id="adminRentalVerification">
+    <main class="main" id="mainRentalVerification">
+
+        <div class="pagetitle">
+            <h1>Reservation Verification</h1>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard">
+            <!-- Rental Verification -->
+            <div class="container-fluid col-12">
+                <div class="card top-selling overflow-auto">
+
+                    <div class="card-body pb-0">
+
+                        <table class="table table-borderless">
+                            <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Driver</th>
+                                <th scope="col">Vehicle</th>
+                                <th scope="col">PickUp</th>
+                                <th scope="col">Return</th>
+                                <th scope="col">Pickup</th>
+                                <th scope="col">Return</th>
+                                <th scope="col">Receipt</th>
+                                <th scope="col">Verify</th>
+                            </tr>
+                            </thead>
+                            <tbody id="adminReservationAccept">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!-- End Rental Verification -->
+        </section>
+
+    </main><!-- End #main -->
+</main>
+
+<!---->
+<!--========================================================================
+                                View All Customer
+============================================================================-->
+<main id="adminViewAllCustomer">
+    <main class="main" id="mainViewAllCustomer">
+
+        <div class="pagetitle">
+            <h1>All Customers</h1>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard">
+            <!-- All Customers -->
+            <div class="container-fluid col-12">
+                <div class="card top-selling overflow-auto">
+
+                    <div class="card-body pb-0">
+
+                        <table class="table table-borderless">
+                            <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Contact Number</th>
+                                <th scope="col">NIC</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">NIC/License</th>
+
+                            </tr>
+                            </thead>
+                            <tbody id="adminSeeAllCustomer">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!-- End Customer Verification -->
+        </section>
+    </main>
+</main>
+
+<!--========================================================================
+                               Driver
+============================================================================-->
+<main id="adminDriver">
+    <main class="main" id="main">
+
+        <div class="container">
+            <section
+                    class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                            <div class="card mb-3">
+
+                                <div class="card-body">
+
+                                    <div class="pt-4 pb-2">
+                                        <h5 class="card-title text-center pb-0 fs-4">Driver</h5>
+                                    </div>
+
+
+                                    <form class="row g-3">
+
+                                        <!--Type-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input class="form-control" id="save-driver-Id" name="carAddVehicleType"
+                                                   placeholder="Enter Id" required type="text">
+                                        </div>
+
+                                        <!--Name-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input class="form-control" id="save-driver-name" placeholder="Name"
+                                                   type="text">
+                                            <span class="control-error" id="lbltrnsm"></span>
+                                        </div>
+
+                                        <!--Address-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input class="form-control" id="save-driver-address" placeholder="Address"
+                                                   type="text">
+                                            <span class="control-error" id="lbltype"></span>
+                                        </div>
+
+                                        <!--DOB-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input class="form-control" id="save-driver-dob" placeholder="DOB"
+                                                   type="date">
+                                            <span class="control-error" id="lblnoofpass"></span>
+                                        </div>
+
+                                        <!--NIC-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input class="form-control" id="save-driver-nic" placeholder="NIC"
+                                                   type="text">
+                                            <span class="control-error" id="lblfuel"></span>
+                                        </div>
+
+                                        <!--License-->
+                                        <div class="form-group col-md-6 mb-3">
+                                            <input class="form-control" id="save-driver-license"
+                                                   placeholder="License Number" type="text">
+                                            <span class="control-error" id="lblmrt"></span>
+                                        </div>
+
+                                    </form>
+
+
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <button class="btn btn-primary" id="btnAddDriver"
+                                                    style="background-color: #14131C;color: white; border: none;width: 150px">
+                                                Add Driver
+                                            </button>
+                                        </div>
+
+                                        <div class="col-sm-3" style="margin-left: -70px">
+                                            <button class="btn btn-primary" id="btnUpdateDriver"
+                                                    style="background-color: navy;color: white; border: none;width: 150px">
+                                                Update
+                                            </button>
+                                        </div>
+
+                                        <div class="col-sm-3" style="margin-left: -65px">
+                                            <button class="btn btn-primary" id="btnDeleteDriver"
+                                                    style="background-color: orangered;color: white; border: none; width: 150px">
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!--================================-->
+                                    <div class="card top-selling overflow-auto mt-5">
+
+                                        <div class="card-body pb-0">
+
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Driver Id</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Address</th>
+                                                    <th scope="col">DOB</th>
+                                                    <th scope="col">NIC</th>
+                                                    <th scope="col">License No</th>
+                                                    <th scope="col">Status</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="admin-view-driver">
+                                                <tr style="border-bottom: 1px solid #d9d9d9">
+                                                    <th scope="row">C001</th>
+                                                    <td>kasun perice</td>
+                                                    <td>panadura</td>
+                                                    <td>0776845184</td>
+                                                    <td>5151515475</td>
+                                                    <td>jayarathna15@gmail.com</td>
+                                                    <td><a class="text-primary fw-bold">View Image</a></td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+</main>
+
+
+<!--========================================================================
+                                  LogIn
+============================================================================-->
+<main id="spaAdminMainLogIn">
+
+
+    <main>
+        <div class="container">
+            <section
+                    class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                            <div class="d-flex justify-content-center py-4">
+                                <a class="logo d-flex align-items-center w-auto" href="asserts/pages/index.html">
+                                    <img alt="" src="asserts/image/logo.jpg">
+                                    <span class="d-none d-lg-block">ECar Rental</span>
+                                </a>
+                            </div><!-- End Logo -->
+
+                            <div class="card mb-3">
+
+                                <div class="card-body">
+
+                                    <div class="pt-4 pb-2">
+                                        <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                                        <p class="text-center small">Enter your username & password to login</p>
+                                    </div>
+
+                                    <form class="row g-3 needs-validation" novalidate>
+
+                                        <div class="col-12">
+                                            <label class="form-label" for="yourUsername1">Username</label>
+                                            <div class="input-group has-validation">
+                                                <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                                                <input class="form-control" id="yourUsername1" name="username" required
+                                                       type="text">
+                                                <div class="invalid-feedback">Please enter your username.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label" for="yourPassword1">Password</label>
+                                            <input class="form-control" id="yourPassword1" name="password" required
+                                                   type="password">
+                                            <div class="invalid-feedback">Please enter your password!</div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" id="rememberMe" name="remember"
+                                                       type="checkbox"
+                                                       value="true">
+                                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                                            </div>
+                                        </div>
+                                        <!--submit btn-->
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100" id="loginBtnLogIN1" type="button">
+                                                Login
+                                            </button>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                            </div>
+
+                            <div class="credits">
+                                Designed by <a href="https://github.com/sohaniabeywickrama">Sohani Abeywickrama</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main><!-- End #main -->
+</main>
+
+<!--=============================================
+        ADMIN VIEW Vehicle
+==============================================-->
+<main id="spaAdminViewVehicle">
+    <main class="main" id="adminViewVehicleSpa">
+
+        <div class="pagetitle">
+            <h1>View Vehicles</h1>
+        </div><!-- End Page Title -->
+
+        <div class="dropdown-center" style="margin-left: 86px; margin-top: 30px">
+            <button aria-expanded="false" class="btn  dropdown-toggle" data-bs-toggle="dropdown" type="button">
+                Short By
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item">Available</a></li>
+                <li><a class="dropdown-item">Non-Available</a></li>
+                <li><a class="dropdown-item">Maintenance</a></li>
+            </ul>
+        </div>
+
+
+        <form id="carViewForm" style="margin-left: 5px; margin-top: 44px;">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-groupCF">
+                        <input class="form-control" disabled id="update-car-Id" placeholder="Registration Id"
+                               type="text">
+                        <span class="control-error" id="lblVReg"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <input class="form-control" id="update-car-dailyRate" placeholder="Daily Rate" type="text">
+                        <span class="control-error" id="lblVDailyRate"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupFT">
+                        <input class="form-control" id="update-car-monthlyRate" placeholder="Monthly Rate" type="text">
+                        <span class="control-error" id="lblVMonthlyRate"></span>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-groupMRT">
+                        <input class="form-control" id="update-car-damagecost" placeholder="Damage Cost" type="text">
+                        <span class="control-error" id="lblDmCost"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupNFP">
+                        <input class="form-control" id="update-car-lastmileage" placeholder="Last Service Mileage"
+                               type="text">
+                        <span class="control-error" id="lblVLast"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupFT">
+                        <input class="form-control" id="update-car-freemileage" placeholder="Free Service Mileage"
+                               type="text">
+                        <span class="control-error" id="lblVFree"></span>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-groupMRT">
+                        <input class="form-control" id="update-car-exkm" placeholder="Price For Extra(KM)" type="text">
+                        <span class="control-error" id="lblexkm"></span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-groupFT">
+                        <input class="form-control" id="update-car-color" placeholder="Color" type="text">
+                        <span class="control-error" id="lblVcolor"></span>
+                    </div>
+                </div>
+
+                <div class="col-sm-4" id="uploadUBF">
+                    <select aria-label="form-select-lg example" class="form-select form-select-ls "
+                            id="update-car-status">
+                        <option>status</option>
+                        <option value="Available">Available</option>
+                        <option value="Non - Available">Non - Available</option>
+                        <option value="Maintenance">Maintenance</option>
+                        <option value="Under Maintenance">Under Maintenance</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+
+        </form>
+
+        <div class="row">
+            <div class="col-sm-3" style="margin-left: 9px">
+                <button class="btn btn-primary" id="btnUpdateCar"
+                        style="background-color: navy;color: white; border: none">Update
+                </button>
+            </div>
+
+            <div class="col-sm-3" style="margin-left: -152px">
+                <button class="btn btn-primary" id="btnDeleteCar"
+                        style="background-color: orangered;color: white; border: none">Delete
+                </button>
+            </div>
+        </div>
+
+        <div class="card top-selling overflow-auto mt-5">
+
+            <div class="card-body pb-0">
+
+                <table class="table table-borderless">
+                    <thead>
+                    <tr>
+                        <th scope="col">Registration Id</th>
+                        <th scope="col">Daily Rate</th>
+                        <th scope="col">Monthly Rate</th>
+                        <th scope="col">Damage Cost</th>
+                        <th scope="col">Last Service Mileage</th>
+                        <th scope="col">Free Service Mileage</th>
+                        <th scope="col">Price For Extra(Km)</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody id="admin-view-car">
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </main><!-- End #main -->
+</main>
+
+<!--=====================================================
+                           Car Schedule
+========================================================-->
+<!--Admin View Vehicle Schedule-->
+<main id="spaAdminVehicleSchedule">
+    <main id="adminVehicleScheduleSpa" class="main">
+
+        <div class="pagetitle">
+            <h1 style="margin-left: 10px">Vehicle Schedule</h1>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard mt-5" style="margin-left: 6px; width: 960px">
+
+            <div class="dropdown-center" style="margin-left: 14px;margin-top: -15px;">
+                <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Vehicle Reg ID
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">VH-001</a></li>
+                    <li><a class="dropdown-item" href="#">VH-002</a></li>
+                    <li><a class="dropdown-item" href="#">VH-003</a></li>
+                </ul>
+            </div>
+
+            <!--===============================-->
+            <div class="card top-selling overflow-auto mt-5">
+
+                <div class="card-body pb-0">
+
+                    <table class="table table-borderless">
+                        <thead>
+                        <tr>
+                            <th scope="col">Car Name</th>
+                            <th scope="col">Customer ID</th>
+                            <th scope="col">Driver ID</th>
+                            <th scope="col">Pickup Date</th>
+                            <th scope="col">Return Date</th>
+                            <th scope="col">Pickup Location</th>
+                            <th scope="col">Return Location</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="admin-car-Schedule">
+                        <tr>
+                            <th scope="row">Suzuki Alto</th>
+                            <td>CU-002</td>
+                            <td>DR-002</td>
+                            <td>05/03/2023</td>
+                            <td>05/03/2023</td>
+                            <td>Kaluthara</td>
+                            <td>Panadura</td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+
+
+
+        </section>
+
+    </main><!-- End #main -->
+
+</main>
+
+
+<!--=====================================================
+            Driver Schedule
+==========================================================-->
+<!--Admin Driver Schedule-->
+<main id="spaAdminDriverSchedule">
+    <main id="adminDriverScheduleSpa" class="main">
+
+        <div class="pagetitle">
+            <h1 style="margin-left: 10px">Driver Schedule</h1>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard mt-5" style="width: 1000px">
+            <div class="row">
+                <div class="row">
+                    <!-- Sales Card -->
+                    <div class="col-xxl-4 col-md-12">
+                        <div class="d-flex align-items-center" style="margin-top: 22px; width: 911px">
+                            <div class="col-lg-3">
+                                <div class="dropdown-center"<!-- style="margin-left: -13px"-->>
+                                    <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Driver ID
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">DR-001</a></li>
+                                        <li><a class="dropdown-item" href="#">DR-002</a></li>
+                                        <li><a class="dropdown-item" href="#">DR-003</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3" style="margin-left: -52px">
+                                <p style="font-size: 15px">Name</p>
+                                <h6 class="fw-bold" style="color: black; font-size: 15px">Kasun Priyankara</h6>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <p style="font-size: 15px">Address</p>
+                                <h6 class="fw-bold" style="color: black; font-size: 15px">No:78,Wadduwa,Panadura</h6>
+                            </div>
+
+                        </div>
+
+                    </div><!-- End Sales Card -->
+                </div>
+
+                <div class="row">
+                    <!-- Sales Card -->
+                    <div class="col-xxl-4 col-md-12">
+                        <div class="d-flex align-items-center" style="margin-top: 22px; width: 717px">
+                            <div class="col-lg-3">
+                                <p style="font-size: 15px">DOB</p>
+                                <h6 class="fw-bold" style="color: black; font-size: 15px">03/03/1999</h6>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <p style="font-size: 15px">NIC</p>
+                                <h6 class="fw-bold" style="color: black; font-size: 15px">199952653412</h6>
+                            </div>
+
+                            <div class="col-lg-3" style="margin-left: 46px">
+                                <p style="font-size: 15px">License No</p>
+                                <h6 class="fw-bold" style="color: black; font-size: 15px">20002536652</h6>
+                            </div>
+
+                        </div>
+
+                    </div><!-- End Sales Card -->
+                </div>
+            </div>
+
+            <div class="col-sm-9 mt-5">
+                <table  class="table table-borderless">
+                    <thead class="bg-light shadow-lg" style="background-color:white; color: black;">
+                    <tr>
+                        <th scope="col" class="text-dark">Customer ID</th>
+                        <th scope="col" class="text-dark">Driver ID</th>
+                        <th scope="col" class="text-dark">Pickup Date</th>
+                        <th scope="col" class="text-dark">Return Date</th>
+                        <th scope="col" class="text-dark">Pickup Location</th>
+                        <th scope="col" class="text-dark">Return Location</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr class="bg-light shadow-sm">
+                        <th scope="row">CU-001</th>
+                        <td>DR-001</td>
+                        <td>02/03/2023</td>
+                        <td>03/03/2023</td>
+                        <td>Kaluthara</td>
+                        <td>Panadura</td>
+                    </tr>
+
+                    <tr class="bg-light shadow-sm">
+                        <th scope="row">CU-002</th>
+                        <td>DR-001</td>
+                        <td>03/03/2023</td>
+                        <td>03/03/2023</td>
+                        <td>Kaluthara</td>
+                        <td>Panadura</td>
+                    </tr>
+
+                    <tr class="bg-light shadow-sm">
+                        <th scope="row">CU-002</th>
+                        <td>DR-001</td>
+                        <td>04/03/2023</td>
+                        <td>05/03/2023</td>
+                        <td>Kaluthara</td>
+                        <td>Panadura</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+</main>
+
+
+
+<!--========================================
+        payment
+==========================================-->
+<!--Admin Payments-->
+<main id="spaAdminPayments">
+    <main id="adminPaymentsSpa" class="main">
+
+        <div class="pagetitle">
+            <h1>Payments</h1>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard mt-5" style="margin-left: 5px; width: 1000px">
+            <div class="row">
+                <div class="row">
+                    <!-- Sales Card -->
+                    <div class="col-xxl-4 col-md-12">
+                        <div class="d-flex align-items-center">
+                            <div class="col-lg-5">
+                                <div class="dropdown-center" style="margin-left: -10px">
+                                    <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Reservation
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">RE-001</a></li>
+                                        <li><a class="dropdown-item" href="#">RE-002</a></li>
+                                        <li><a class="dropdown-item" href="#">RE-003</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5" style="margin-left: 89px">
+                                <p style="font-size: 15px">Customer</p>
+                                <h6 class="fw-bold" style="color: black; font-size: 15px">Kamal Gunarathne</h6>
+                            </div>
+
+                            <div class="col-lg-5">
+                                <p style="font-size: 15px">Vehicle</p>
+                                <h6 class="fw-bold" style="color: black; font-size: 15px">VH-001</h6>
+                            </div>
+
+                            <div class="col-lg-5">
+                                <p style="font-size: 15px">Driver</p>
+                                <h6 class="fw-bold" style="color: black; font-size: 15px">DR-001</h6>
+                            </div>
+
+                            <div class="col-lg-5">
+                                <p style="font-size: 15px">Pickup Date</p>
+                                <h6 class="fw-bold" style="color: black; font-size: 15px">02/03/2023</h6>
+                            </div>
+
+                            <div class="col-lg-5">
+                                <p style="font-size: 15px">Return Date</p>
+                                <h6 class="fw-bold" style="color: black; font-size: 15px">03/03/2023</h6>
+                            </div>
+                        </div>
+
+                    </div><!-- End Sales Card -->
+
+                    <div>
+                        <h6 class="fw-bold" style="margin-top: 90px; margin-left: 4px">Rental Details</h6>
+                    </div><!-- End Page Title -->
+
+                </div>
+            </div>
+
+            <div class="col-sm-9 mt-lg-3">
+
+                <table style="width: 903px; margin-left: 19px;" class="table table-borderless">
+                    <thead class="bg-light shadow-lg" style="background-color:white; color: black;">
+                    <tr>
+                        <th scope="col" class="text-dark">Car</th>
+                        <th scope="col" class="text-dark">Driver</th>
+                        <th scope="col" class="text-dark">Payment</th>
+                        <th scope="col" class="text-dark">Extra Km</th>
+                        <th scope="col" class="text-dark">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="bg-light shadow-sm">
+                        <th scope="row">Alto-Manual</th>
+                        <td>DR-001</td>
+                        <td>25,000</td>
+                        <td>
+                            <input type="text" name="km" placeholder="km">
+                        </td>
+                        <td>Paid</td>
+                    </tr>
+
+                    <tr class="bg-light shadow-sm">
+                        <th scope="row">Alto-800</th>
+                        <td>DR-002</td>
+                        <td>25,000</td>
+                        <td>
+                            <input type="text" name="km" placeholder="km">
+                        </td>
+                        <td>Paid</td>
+                    </tr>
+
+                    <tr class="bg-light shadow-sm">
+                        <th scope="row">Alto-Premium</th>
+                        <td>None</td>
+                        <td>25,000</td>
+                        <td>
+                            <input type="text" name="km" placeholder="km">
+                        </td>
+                        <td>Pending</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row">
+                <div class="card-body d-flex gap-5 mt-5" style="margin-left: 7px;">
+                    <div class="col-4">
+                        <label for="damageCost" class="form-label">Damage Cost</label>
+                        <input type="text" name="cost" class="form-control" id="damageCost" required>
+                    </div>
+
+                    <div class="col-4">
+                        <label for="extrakm" class="form-label">Extra KM Cost</label>
+                        <input type="text" name="cost" class="form-control" id="extrakm" required>
+                    </div>
+
+                    <div class="col-4">
+                        <label style="width: 296px;" for="returnDamageAmount" class="form-label">Return Wavier Amount</label>
+                        <input type="text" name="cost" class="form-control" id="returnDamageAmount" required>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="card-body d-flex gap-3 mt-0" style="margin-left: 7px">
+                    <div class="col-3">
+                        <label style="width: 296px;" for="driverCharge" class="form-label">Driver Charge</label>
+                        <input type="text" name="cost" class="form-control" id="driverCharge" required>
+                    </div>
+
+                    <div class="col-3" style="margin-left: 67px;">
+                        <label style="width: 296px;" for="damageName" class="form-label">Damage Description</label>
+                        <input type="text" name="cost" class="form-control" id="damageName" required>
+                    </div>
+
+                    <div class="col-3" style="margin-left: 71px;">
+                        <label style="width: 296px;" for="totalamount" class="form-label">Total Amount </label>
+                        <input type="text" name="cost" class="form-control" id="totalamount" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <button class="btn btn-primary" id="Pay" style="background-color: #14131C; margin-left: 805px; color: white; border: none; width: 90px;">Pay</button>
+                </div>
+            </div>
+
+        </section>
+
+    </main><!-- End #main -->
+</main>
+
+
+<script src="asserts/js/jquery-3.6.1.min.js"></script>
+
+<!-- Vendor JS Files -->
+<script src="asserts/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="asserts/vendor/aos/aos.js"></script>
+<script src="asserts/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="asserts/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="asserts/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="asserts/vendor/purecounter/purecounter_vanilla.js"></script>
+
+
+<script src="asserts/js/main/adminNav/adminDashboardNav.js"></script>
+<script src="asserts/js/controller/customerController.js"></script>
+<script src="asserts/js/controller/driverController.js"></script>
+<script src="asserts/js/controller/carController.js"></script>
+<script src="asserts/js/controller/adminController.js"></script>
+<script src="asserts/js/controller/adminAcceptController.js"></script>
+</body>
+</html>
